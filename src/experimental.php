@@ -21,8 +21,10 @@ function orderPizza($pizzaType, $pizzaReceiver)
             $address = 'BeCode office';
         }  
     }
-    $orderText .= ' pizza should be sent to ' . $pizzaReceiver . ". <br>The address: {$address}.";
-    echo $orderText.'<br>'.'The bill is €' . $totalPrice . '.<br>'."Order finished.<br><br>";
+    $orderText .= ' pizza should be sent to ' . $pizzaReceiver . 
+    ". <br>The address: {$address}.".'<br>'.'The bill is €' . $totalPrice . 
+    '.<br>'."Order finished.<br><br>";
+    echo $orderText;
 }
 
 //code not used
@@ -64,15 +66,15 @@ function pizzaPrices($pizzaType)
 function thePizzaOrders()
 {
     $test = 0;//?
-    orderPizza('hawai', 'nico');
+    orderPizza('calzone', 'nico');
     orderPizza('marguerita', 'nick');    
     orderPizza('golden', 'students');
 }
 
-//make all hapy
-function makeAllHappy($orderPizza)
+//make all happy
+function makeAllHappy($pizzaOrders)
 {
-    if ($orderPizza) {
+    if ($pizzaOrders) {
         thePizzaOrders();
     } else {
         // Should not do anything when false
