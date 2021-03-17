@@ -4,12 +4,10 @@
 
 //function order pizza
 function orderPizza($pizzaType, $pizzaReceiver)
-{    
-    $type = $pizzaType;
+{   
     echo 'Creating new order... <br>';
-    $orderText = 'A ';
-    $orderText .= $pizzaType;
-    $totalPrice = pizzaPrices($type);    
+    $orderText = 'A '.$pizzaType;
+    $totalPrice = pizzaPrices($pizzaType);    
     $address = 'unknown';
     if ($pizzaReceiver == 'koen') {
         $address = 'a peniche in Liège';
@@ -22,8 +20,9 @@ function orderPizza($pizzaType, $pizzaReceiver)
         }  
     }
     $orderText .= ' pizza should be sent to ' . $pizzaReceiver . 
-    ". <br>The address: {$address}.".'<br>'.'The bill is €' . $totalPrice . 
-    '.<br>'."Order finished.<br><br>";
+    '. <br>The address:'.$address.'<br>'.
+    'The bill is €' . $totalPrice . '.<br>'.
+    'Order finished.<br><br>';
     echo $orderText;
 }
 
